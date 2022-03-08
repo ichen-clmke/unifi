@@ -1,6 +1,3 @@
-This is a collection of scripts and programs I have written for Ubiquiti Unifi products.
+Script for installing and maintaining a UniFi controller with Let's Encrypt certificates and some other goodies baked in.
 
-Feel free to explore!
-
-For instructions on how to set up an UniFi controller on Google Cloud Platform see
-https://metis.fi/en/2018/02/unifi-on-gcp/
+Original script credit Petri Riihikallio https://metis.fi
