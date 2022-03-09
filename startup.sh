@@ -111,6 +111,7 @@ fi
 # 	echo "System upgraded"
 # fi
 
+
 # HAVEGEd is straightforward
 haveged=$(dpkg-query -W --showformat='${Status}\n' haveged 2>/dev/null)
 if [ "x${haveged}" != "xinstall ok installed" ]; then
@@ -358,9 +359,9 @@ fi
 #
 # Set up Let's Encrypt
 #
-# CYB: Let's make ours user interactive for now
-echo enter FQDN
-read -r dnsname
+# set dnsname from a file in /root/build
+dnsname=$(cat /root/build/fqdn)
+
 # dnsname=$(curl -fs -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/dns-name")
 if [ -z ${dnsname} ]; then exit 0; fi
 privkey=/etc/letsencrypt/live/${dnsname}/privkey.pem
