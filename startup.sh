@@ -491,7 +491,7 @@ cat > /usr/local/sbin/certbotrun.sh <<_EOF
 # e#xtIP=\$(curl -fs -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip")
 # CYB: The above won't work for us, using ifconfig.me
 extIP=\$(curl ifconfig.me)
-dnsIP=\$(nslookup ${dnsname} 66.185.16.130 | grep "Address" | awk 'FNR == 2 {print}' | awk '{print $2}')
+dnsIP=\$(nslookup ${dnsname} 66.185.16.130 | grep "Address" | awk 'FNR == 2 {print}' | awk '{print \$2}')
 
 echo >> $LOG
 echo "CertBot run on \$(date)" >> $LOG
