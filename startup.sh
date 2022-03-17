@@ -13,6 +13,9 @@
 # Set up logging for unattended scripts and UniFi's MongoDB log
 # Variables $LOG and $MONGOLOG are used later on in the script.
 #
+
+sleep 10m
+
 LOG="/var/log/unifi/cyb-unifi.log"
 if [ ! -f /etc/logrotate.d/cyb-unifi.conf ]; then
 	cat > /etc/logrotate.d/cyb-unifi.conf <<_EOF
